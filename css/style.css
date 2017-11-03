@@ -110,3 +110,29 @@ p {
 	font-size: 1.5em;
 	color: black;
 }
+
+.details {
+	width: 900px;
+	background: rgba(248, 248, 248, 0.35);
+	float: left;
+	border-radius: 20px;
+	padding: 20px;
+}
+
+.video {
+	
+	text-align: center;
+	padding-bottom: 70px;
+	padding-left: 70px;
+	float:left;
+}
+
+.comment {
+	width: 50%;
+	background: rgba(248, 248, 248, 0.35);
+	margin:5px;
+	border-radius: 25px;
+	padding: 5px;
+	font-size: 0.8em;
+}
+

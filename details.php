@@ -47,9 +47,19 @@ $row=mysqli_fetch_array($res);
 ?>
   <div class='container'>
   <img src="<?php echo $row["img"];?>" height="250" width="250">
+  <p><?php echo $row["name"];?></p>
   <input id="vai" type="hidden" name="vai" value="<?php echo $row["id"];?>">
   <button id="atc" name="addcart" class="btn" type="submit">Add to Cart</button>
   </div>
 </form>
+<?php
+$req = mysqli_query($con,"select * from music_details where name like '".$row['name']."'");
+$fetch = mysqli_fetch_array($req);
+?>
+  <div class="video"><?php echo $fetch["link"]; ?></div>
+  <div class="details">
+  <h2><?php echo $fetch["name"]; ?></h2>
+  <p><?php echo $fetch["text"]; ?></p>
+  </div>
 </body>
 </html>
