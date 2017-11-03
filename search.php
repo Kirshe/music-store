@@ -4,7 +4,7 @@
         {
 	   header("Location:redirect.php");
   }
-  require_once('dbconfig/config.php');
+
 ?>
 <html>
 <head>
@@ -12,22 +12,27 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <form action="search.php" method="post">
+<form action="search.php" method="post">
    <input type="text" placeholder="Search" name="search">
-  <button class="btn" type="submit">Search</button></form>
+  <button class="btn" type="button">Search</button></form>
   <div class="menu">
   <a href="music.php"><button class="btn" type="button" style="border-style:inset; background-color:white">Albums</button>
   <a href="artists.php"><button class="btn" type="button">Artists</button>
   <a href="singles.php"><button class="btn" type="button">Singles</button>
+   
 </div>
-
 <div align="right">
 <a href="index.php"><button class="btn" type="button">Log Out</button></a></div>
 <div align="right">
 <a href="addtocart.php"><button class="btn" type="button">Cart</button></a></div>
 <?php
-$res=mysqli_query($con,"select * from img_display where type like 'album'");
+$con=mysqli_connect ("localhost", "root", "") or die ('I cannot connect to the database because: ' . mysql_error());
+mysqli_select_db ($con,'logint');
 
+@$search=$_POST['search'];
+$res=mysqli_query($con,"select * from img_display where name like '%$search%'");
+if(mysqli_num_rows($res)>0)
+  {
   echo "<div class='music'>"; 
    while($row=mysqli_fetch_array($res))
    {
@@ -44,6 +49,9 @@ $res=mysqli_query($con,"select * from img_display where type like 'album'");
    echo "</div>";
    }
 echo "</div>";
+    }
+else echo "<h1>Not Found</h1>";
 ?>
+
 </body>
 </html>
