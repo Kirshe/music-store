@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
 <div class="menu">
 <a href="music.php"><button class="btn" type="button">Albums</button>
 <a href="artists.php"><button class="btn" type="button">Artists</button>
@@ -52,9 +51,9 @@ if(mysqli_num_rows($res)>0)
    }
 echo "</div>";
     }
-else echo "<h1>Not Found</h1>";
+else echo "<script>alert('Not Found')</script>";
   }
-?>
+  ?>
 
 </body>
 </html>
