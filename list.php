@@ -13,14 +13,14 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <script>
 $(function(){
-  $("#atc").click(function(e){
+  $("button[name='addcart']").click(function(e){
     e.preventDefault();
     $.ajax({
       type: "POST",
       url: "process.php",
       data: {
         'addcart':'',
-        'vai':$("#vai").val()
+        'vai':$(this).val()
         },
       success: function(a){
         alert(a);
@@ -34,7 +34,7 @@ $(function(){
 
 <a href="javascript:history.back()"><button class="btn" type="button">Back</button></a>
 <div align="right">
-<a href="index.php"><button class="btn" type="button">Log Out</button></a></div>
+<a href="logout.php"><button class="btn" type="button">Log Out</button></a></div>
 <div align="right">
 <a href="addtocart.php"><button class="btn" type="button">Cart</button></a></div>
 <?php
@@ -47,8 +47,8 @@ while($row=mysqli_fetch_array($res))
     ?>
   <div class='container'>
   <img src="<?php echo $row["img"];?>" height="250" width="250">
-  <input id="vai" type="hidden" name="vai" value="<?php echo $row["id"];?>">
-  <button id="atc" name="addcart" class="btn" type="submit">Add to Cart</button>
+  
+  <button name="addcart" value="<?php echo $row["id"];?>" class="btn" type="submit">Add to Cart</button>
   </div>
   <?php
 }

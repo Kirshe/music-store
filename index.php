@@ -27,35 +27,32 @@
 		<?php
 			if(isset($_POST['login']))
 			{
-				@$username=$_POST['username'];
-				@$password=$_POST['password'];
-				$query = "select * from logint where username='$username' and password='$password' ";
+				$username=$_POST['username'];
+				$password=$_POST['password'];
+				$query = "select password from logint where username='$username'";
 				//echo $query;
 				$query_run = mysqli_query($con,$query);
 				//echo mysql_num_rows($query_run);
-				if($query_run)
+				$storedpass = $query_run->fetch_assoc();
+				if(password_verify($password, $storedpass['password']))
 				{
-					if(mysqli_num_rows($query_run)>0)
-					{
-					$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
+					
+					#$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
 					
 					$_SESSION['username'] = $username;
-					$_SESSION['password'] = $password;
+					$_SESSION['password'] = True;
 					
 					header( "Location: homepage.php");
-					}
-					else
-					{
-						echo '<script type="text/javascript">alert("No such User exists. Invalid Credentials")</script>';
-					}
 				}
 				else
 				{
-					echo '<script type="text/javascript">alert("Database Error")</script>';
+					echo '<script type="text/javascript">alert("Invalid Credentials")</script>';
 				}
+				
 			}
 			else
 			{
+				#echo "<script>alert('Database error')</script>";
 			}
 		?>
 		

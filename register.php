@@ -29,11 +29,11 @@
 		<?php
 			if(isset($_POST['register']))
 			{
-				@$username=$_POST['username'];
-				@$password=$_POST['password'];
-				@$cpassword=$_POST['cpassword'];
+				$username=$_POST['username'];
+				$password=password_hash($_POST['password'], PASSWORD_DEFAULT);
+				$cpassword=$_POST['cpassword'];
 				
-				if($password==$cpassword)
+				if(password_verify($cpassword, $password))
 				{
 					$query = "select * from logint where username='$username'";
 				$query_run = mysqli_query($con,$query);

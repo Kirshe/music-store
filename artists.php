@@ -17,9 +17,10 @@
   <a href="artists.php"><button class="btn" type="button" style="border-style:inset; background-color:white">Artists</button>
   <a href="singles.php"><button class="btn" type="button">Singles</button>
   <a href="search.php"><button class="btn" type="button">Search</button>
+  <a href="feedback.php"><button class="btn" type="button">Feedback</button>
 </div>
 <div align="right">
-<a href="index.php"><button class="btn" type="button">Log Out</button></a></div>
+<a href="logout.php"><button class="btn" type="button">Log Out</button></a></div>
 <div align="right">
 <a href="addtocart.php"><button class="btn" type="button">Cart</button></a></div>
 <?php

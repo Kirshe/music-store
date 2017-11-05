@@ -35,14 +35,14 @@ $(function(){
 <form action="details.php" method="post">
 <a href="javascript:history.back()"><button class="btn" type="button">Back</button></a>
 <div align="right">
-<a href="index.php"><button class="btn" type="button">Log Out</button></a></div>
+<a href="logout.php"><button class="btn" type="button">Log Out</button></a></div>
 <div align="right">
 <a href="addtocart.php"><button class="btn" type="button">Cart</button></a></div>
 <?php
 @$trick1=$_POST['trick'];
 $res=mysqli_query($con,"select * from img_display where id='$trick1'");
 $temp=$_SESSION['username'];
-$password=$_SESSION['password'];  
+#$password=$_SESSION['password'];  
 $row=mysqli_fetch_array($res);
 ?>
   <div class='container'>

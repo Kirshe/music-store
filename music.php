@@ -12,17 +12,16 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <form action="search.php" method="post">
-   <input type="text" placeholder="Search" name="search">
-  <button class="btn" type="submit">Search</button></form>
   <div class="menu">
   <a href="music.php"><button class="btn" type="button" style="border-style:inset; background-color:white">Albums</button>
   <a href="artists.php"><button class="btn" type="button">Artists</button>
   <a href="singles.php"><button class="btn" type="button">Singles</button>
+  <a href="search.php"><button class="btn" type="button">Search</button>
+  <a href="feedback.php"><button class="btn" type="button">Feedback</button>
 </div>
 
 <div align="right">
-<a href="index.php"><button class="btn" type="button">Log Out</button></a></div>
+<a href="logout.php"><button class="btn" type="button">Log Out</button></a></div>
 <div align="right">
 <a href="addtocart.php"><button class="btn" type="button">Cart</button></a></div>
 <?php

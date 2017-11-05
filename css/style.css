@@ -101,7 +101,7 @@ img.avatar {
 body {
 	background-image: url("../imgs/bg.jpg");
 	background-color: #3d3c3c;
-	background-size: 1600px 900px;
+	background-size: cover;
 	background-attachment: fixed;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -128,11 +128,49 @@ p {
 }
 
 .comment {
-	width: 50%;
+	width: 30%;
 	background: rgba(248, 248, 248, 0.35);
-	margin:5px;
+	margin: 0 auto;
 	border-radius: 25px;
-	padding: 5px;
-	font-size: 0.8em;
+	padding: 5%;
+	padding-top: 2%;
+	padding-bottom: 1%
 }
 
+.comment input {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	border: none;
+}
+
+.estar {
+	display: inline-block;
+	width: 20px;
+	margin: 0;
+	background: url(../imgs/estar.ico);
+	background-size: contain;
+	background-repeat: no-repeat;
+	border: none;
+}
+
+.star {
+	display: inline-block;
+	width: 20px;
+	margin: 0;
+	background: url(../imgs/star.ico);
+	background-size: contain;
+	background-repeat: no-repeat;
+	border: none;
+}
+
+.feedback {
+	width: 40%;
+	border: 10px;
+	border-radius: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 20px;
+	background-color: #ccc;
+}

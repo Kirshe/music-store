@@ -5,11 +5,12 @@ if(!isset($_SESSION['username'])||!isset($_SESSION['password'])){
 }
 require_once('dbconfig/config.php');
 $temp=$_SESSION['username'];
-$password=$_SESSION['password'];  
+ 
 if(isset($_POST['addcart'])){
-    @$vai=$_POST['vai'];
+    $vai=$_POST['vai'];
     $query = "select * from cart where un='$temp' and id1='$vai'";
     $query_run = mysqli_query($con,$query);
+    
     if($query_run){
         if(mysqli_num_rows($query_run)>0)
             echo 'Already added to cart!';
@@ -20,4 +21,10 @@ if(isset($_POST['addcart'])){
                 echo 'Added to cart successfully';
         }
     }
+    else{
+        echo "some problem occured";
+    }
+}
+else{
+    echo "this isn't expected";
 }

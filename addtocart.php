@@ -32,7 +32,7 @@ $(function(){
 <body>
 <a href="javascript:history.back()"><button class="btn" type="button">Back</button></a>
 <div align="right">
-<a href="index.php"><button class="btn" type="button" align="right">Log Out</button></a></div>
+<a href="logout.php"><button class="btn" type="button" align="right">Log Out</button></a></div>
 <?php
 $con=mysqli_connect ("localhost", "root", "") or die ('I cannot connect to the database because: ' . mysql_error());
 mysqli_select_db ($con,'logint');
